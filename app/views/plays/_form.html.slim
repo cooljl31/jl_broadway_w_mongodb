@@ -1,4 +1,8 @@
-= simple_form_for @play do |f|
+= simple_form_for @play, html: { multipart: true } do |f|
+  - unless !@play.new_record
+    = select_tag(:category_id, options_for_select(@categories), prompt: 'Select Category')
+  - else
+    = f.select :category_id, @categories unless @play.new_record
   = f.input :title, label: 'Play'
   = f.input :description, as: :text
   = f.input :director
