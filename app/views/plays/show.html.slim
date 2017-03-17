@@ -1,3 +1,10 @@
 h2= @play.title
 h3= @play.director
+h4= @play.category.name
 p= @play.description
+
+.links.btn-group
+  - if user_signed_in? && @play.user_id == current_user._id
+    = link_to 'edit', edit_play_path(@play), class: 'btn btn-info'
+    = link_to 'delete', play_path, method: :delete, data: { confirm: 'are your sure?'}, class: 'btn btn-danger'
+
