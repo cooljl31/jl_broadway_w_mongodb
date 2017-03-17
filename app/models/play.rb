@@ -20,4 +20,5 @@ class Play
                                   url: "/images/:id/:style/:filename",
                                   :convert_options => { :all => '-background white -flatten +matte' }
  validates_attachment_content_type :play_img, content_type: /\Aimage\/.*\Z/
+ validates_presence_of :title, :description, :director, :category
 end
