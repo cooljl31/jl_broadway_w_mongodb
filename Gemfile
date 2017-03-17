@@ -37,6 +37,7 @@ gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'mongoid-paperclip'
 group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
