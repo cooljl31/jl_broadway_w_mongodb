@@ -10,9 +10,22 @@
           =< @play.director
       h4.play-director= @play.category.name
       p.play-decs= @play.description
-
+  .row
+    .col-md-12
+      .reviews
+        h1 Review
+        = render @play.reviews
+        = link_to 'Add Review', new_play_review_path(@play), class: 'btn-custom'
 .links.btn-group
   - if user_signed_in? && @play.user_id == current_user._id
     = link_to 'edit', edit_play_path(@play), class: 'btn btn-info'
-    = link_to 'delete', play_path, method: :delete, data: { confirm: 'are your sure?'}, class: 'btn btn-danger'
+    = link_to 'delete', play_path(@play), method: :delete, data: { confirm: 'are your sure?'}, class: 'btn btn-danger'
 
+javascript:
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
