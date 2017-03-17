@@ -37,4 +37,5 @@ class User
 
   has_many :plays
   has_many :categories
+  has_many :reviews
 end

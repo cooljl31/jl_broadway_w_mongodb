@@ -2,6 +2,7 @@ class Play
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Paperclip
+
   field :title, type: String
   field :description, type: String
   field :director, type: String
@@ -10,9 +11,10 @@ class Play
 
   belongs_to :user
   belongs_to :category
+  has_many :reviews
 
 
-  has_mongoid_attached_file :play_img, styles: { :large => "500x500>", :medium => "300x300>", :thumb => "100x100>" },
+  has_mongoid_attached_file :play_img, styles: { :large => "475x325>", :medium => "350x250>", :thumb => "100x100>" },
                                   default_url: "/images/:style/missing.png",
                                   path: ":rails_root/public/images/:id/:style/:filename",
                                   url: "/images/:id/:style/:filename",
