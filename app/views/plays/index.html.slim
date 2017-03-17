@@ -1,0 +1,4 @@
+- @plays.each do |play|
+  h2= link_to play.title, play_path(play)
+br
+= link_to 'New Play', new_play_path
