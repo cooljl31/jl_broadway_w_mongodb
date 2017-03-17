@@ -4,5 +4,8 @@ h1.current-category
 - if @plays.count == 0
   h3 There are no play for this category
 - else
-  - @plays.each do |play|
-    h2= link_to play.title, play_path(play)
+  .row
+    - @plays.each do |play|
+      .col-md-3
+        a href="/plays/#{play.id}"
+          = image_tag play.play_img.url(:medium), class: 'play'

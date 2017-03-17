@@ -1,7 +1,15 @@
-h2= @play.title
-h3= @play.director
-h4= @play.category.name
-p= @play.description
+.row
+  .col-md-4
+    = image_tag @play.play_img.url(:large), class: 'play-show'
+  .col-md-8
+    .play-info
+      h2.play-title= @play.title
+      h3.play-director
+        span
+          | From
+          =< @play.director
+      h4.play-director= @play.category.name
+      p.play-decs= @play.description
 
 .links.btn-group
   - if user_signed_in? && @play.user_id == current_user._id
