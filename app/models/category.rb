@@ -5,4 +5,5 @@ class Category
   field :name, type: String
 
   has_many :plays
+  validates_presence_of :_id
 end
