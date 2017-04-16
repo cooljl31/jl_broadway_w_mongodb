@@ -2,7 +2,7 @@ h1.current-category
   = params[:category]
 
 - if @plays.count == 0
-  h3 There are no play for this category
+    h3 There are no play for this category
 - else
   .row
     - @plays.each do |play|
