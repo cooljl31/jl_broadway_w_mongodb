@@ -36,6 +36,11 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 ## Linked Files & Directories (Default None):
 #set :linked_files, %w{config/database.yml}
 # set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+# Force invocation of the given task, even if it has already been run
+def invoke!(task, *args)
+  Rake::Task[task].reenable
+  invoke(task, *args)
+end
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
@@ -67,6 +72,7 @@ namespace :deploy do
       before 'deploy:restart', 'puma:start'
       invoke 'deploy'
     end
+    invoke 'mongoid:index'
   end
 
   desc 'Restart application'
@@ -74,7 +80,6 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       invoke 'puma:restart'
     end
-    invoke 'mongoid:index'
   end
 
   before :starting,     :check_revision
