@@ -41,7 +41,7 @@ gem 'bson_ext'
 gem 'slim-rails', '>= 3.1.2'
 gem 'simple_form', '>= 3.4.0'
 gem 'bootstrap-sass'
-gem 'devise', '>= 4.2.1'
+gem 'devise', '>= 4.7.1'
 gem 'devise-bootstrap-views'
 gem 'mongoid-paperclip'
 group :test do
