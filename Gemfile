@@ -39,7 +39,7 @@ gem 'rails_12factor', group: :production
 gem 'mongoid'
 gem 'bson_ext'
 gem 'slim-rails', '>= 3.1.2'
-gem 'simple_form', '>= 3.4.0'
+gem 'simple_form', '>= 5.0.0'
 gem 'bootstrap-sass'
 gem 'devise', '>= 4.2.1'
 gem 'devise-bootstrap-views'
