@@ -4,12 +4,12 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-gem 'rails', '~> 5.0.2'
+gem 'rails', '~> 5.0.7', '>= 5.0.7.2'
 gem 'puma', '~> 3.0'
-gem 'sass-rails', '~> 5.0', '>= 5.0.6'
+gem 'sass-rails', '~> 5.0', '>= 5.0.7'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
-gem 'jquery-rails', '>= 4.3.1'
+gem 'coffee-rails', '~> 4.2', '>= 4.2.2'
+gem 'jquery-rails', '>= 4.3.5'
 gem 'turbolinks', '~> 5'
 gem 'therubyracer'
 gem 'jbuilder', '~> 2.5'
@@ -22,7 +22,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '>= 3.5.0'
+  gem 'web-console', '>= 3.7.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -38,16 +38,16 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails_12factor', group: :production
 gem 'mongoid'
 gem 'bson_ext'
-gem 'slim-rails', '>= 3.1.2'
-gem 'simple_form', '>= 3.4.0'
+gem 'slim-rails', '>= 3.2.0'
+gem 'simple_form', '>= 4.1.0'
 gem 'bootstrap-sass'
-gem 'devise', '>= 4.2.1'
+gem 'devise', '>= 4.7.0'
 gem 'devise-bootstrap-views'
 gem 'mongoid-paperclip'
 group :test do
   gem 'database_cleaner'
-  gem 'factory_girl_rails', '>= 4.8.0'
+  gem 'factory_girl_rails', '>= 4.9.0'
   gem 'mongoid-rspec'
-  gem 'cucumber-rails', '>= 1.4.5', require: false
+  gem 'cucumber-rails', '>= 1.8.0', require: false
   gem 'capybara', '>= 2.13.0'
 end
