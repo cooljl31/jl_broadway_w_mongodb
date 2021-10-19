@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 gem 'rails', '~> 5.0.2'
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 4.3', '>= 4.3.9'
 gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
@@ -30,7 +30,7 @@ group :development do
   gem 'capistrano-rvm',     require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+  gem 'capistrano3-puma', '>= 4.0.0', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
