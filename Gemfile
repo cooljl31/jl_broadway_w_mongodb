@@ -4,9 +4,9 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-gem 'rails', '~> 5.0.2'
+gem 'rails', '~> 7.0.0'
 gem 'puma', '~> 3.0'
-gem 'sass-rails', '~> 5.0', '>= 5.0.6'
+gem 'sass-rails', '~> 6.0', '>= 6.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2', '>= 4.2.1'
 gem 'jquery-rails', '>= 4.3.1'
@@ -48,6 +48,6 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails', '>= 4.8.0'
   gem 'mongoid-rspec'
-  gem 'cucumber-rails', '>= 1.4.5', require: false
+  gem 'cucumber-rails', '>= 3.0.0', require: false
   gem 'capybara', '>= 2.13.0'
 end
