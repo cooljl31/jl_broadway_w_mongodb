@@ -36,18 +36,18 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails_12factor', group: :production
-gem 'mongoid'
+gem 'mongoid', '>= 7.6.1'
 gem 'bson_ext'
 gem 'slim-rails', '>= 3.1.2'
 gem 'simple_form', '>= 3.4.0'
 gem 'bootstrap-sass'
 gem 'devise', '>= 4.2.1'
 gem 'devise-bootstrap-views'
-gem 'mongoid-paperclip'
+gem 'mongoid-paperclip', '>= 0.1.0'
 group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails', '>= 4.8.0'
-  gem 'mongoid-rspec'
+  gem 'mongoid-rspec', '>= 4.0.0'
   gem 'cucumber-rails', '>= 1.4.5', require: false
   gem 'capybara', '>= 2.13.0'
 end
